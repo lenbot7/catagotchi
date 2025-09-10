@@ -23,7 +23,8 @@ def get_name():
 
 
 def main():
-    cat = """ _._     _,-'""`-._
+    cat = """
+  _._     _,-'""`-._
 (,-.`._,'(       |\\`-/|
     `-.-' \\ )-`( , o o)
           `-    \\`_`"'-
@@ -40,25 +41,25 @@ def main():
     print("5. Quit")
     while True:
         choice = input("Enter your choice: ")
-        if choice == '1':
-            joke = get_joke()
-            print(joke[0]['setup'])
-            print(joke[0]['punchline'])
-        elif choice == '2':
-            facts = cat_facts()
-            print(facts['data'][0]['fact'])
-        elif choice == '3':
-            name = get_name()
-            print(name[0])
-        elif choice == '4':
-            print("You pet the cat! :3")
-            print(cat)
-        elif choice == '5':
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please try again.")
+        match choice:
+            case '1':
+                joke = get_joke()
+                print(joke[0]['setup'])
+                print(joke[0]['punchline'])
+            case '2':
+                facts = cat_facts()
+                print(facts['data'][0]['fact'])
+            case '3':
+                name = get_name()
+                print(name[0])
+            case '4':
+                print("You pet the cat! :3")
+                print("purr mrrp")
+            case '5':
+                print("Goodbye!")
+                break
+            case _:
+                print("Invalid choice. Please try again.")
 
 
-if __name__ == '__main__':
-    main()
+main()
