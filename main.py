@@ -1,4 +1,4 @@
-import requests
+import requests, random
 
 
 def get_joke():
@@ -23,16 +23,20 @@ def get_name():
 
 
 def main():
-    cat = """
+    cat = ["""
   _._     _,-'""`-._
 (,-.`._,'(       |\\`-/|
     `-.-' \\ )-`( , o o)
           `-    \\`_`"'-
 
-"""
+""","""  /\\_/\\  (
+ ( ^.^ ) _)
+   \\"/  (
+ ( | | )
+(__d b__)"""]
 
     print("Welcome to Catagotchi! Your new (cute) cat friend!")
-    print(cat)
+    print(cat[(random.randrange(0,2))])
     print("What would you like to do?")
     print("1. Get a fun joke")
     print("2. Get a cat fact")
